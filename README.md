@@ -895,7 +895,7 @@ def SaveAsHTML(fig):
     #pio.write_html(fig, file='src/' + str(count_html_output) + '.html', auto_open=False)
     #print ('<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/' + str(count_html_output) + '.html" height="100%" width="100%"></iframe>')
     fig.write_image("src/" + str(count_html_output) + ".png")
-    display(Markdown("![png](src/src/" + str(count_html_output) + ".png)"))
+    display(Markdown("![png](src/" + str(count_html_output) + ".png)"))
     count_html_output = count_html_output + 1
 ```
 
@@ -912,7 +912,7 @@ SaveAsHTML(fig)
 ```
 
 
-![png](src/src/1.png)
+![png](src/1.png)
 
 
 Knife and other stabbing weapons are mostly used in violent crimes. Interestingly, bows, arrows and boomerangs are also used.
@@ -967,7 +967,7 @@ SaveAsHTML(fig)
 ```
 
 
-![png](src/src/2.png)
+![png](src/2.png)
 
 
 
@@ -1036,11 +1036,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/3.png)
+![png](src/3.png)
 
 
 
-![png](src/src/4.png)
+![png](src/4.png)
 
 
     
@@ -1066,11 +1066,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/5.png)
+![png](src/5.png)
 
 
 
-![png](src/src/6.png)
+![png](src/6.png)
 
 
     
@@ -1093,11 +1093,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/7.png)
+![png](src/7.png)
 
 
 
-![png](src/src/8.png)
+![png](src/8.png)
 
 
     
@@ -1116,11 +1116,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/9.png)
+![png](src/9.png)
 
 
 
-![png](src/src/10.png)
+![png](src/10.png)
 
 
     
@@ -1148,11 +1148,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/11.png)
+![png](src/11.png)
 
 
 
-![png](src/src/12.png)
+![png](src/12.png)
 
 
     
@@ -1179,11 +1179,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/13.png)
+![png](src/13.png)
 
 
 
-![png](src/src/14.png)
+![png](src/14.png)
 
 
     
@@ -1202,11 +1202,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/15.png)
+![png](src/15.png)
 
 
 
-![png](src/src/16.png)
+![png](src/16.png)
 
 
     
@@ -1231,11 +1231,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/17.png)
+![png](src/17.png)
 
 
 
-![png](src/src/18.png)
+![png](src/18.png)
 
 
     
@@ -1252,11 +1252,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/19.png)
+![png](src/19.png)
 
 
 
-![png](src/src/20.png)
+![png](src/20.png)
 
 
     
@@ -1284,11 +1284,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/21.png)
+![png](src/21.png)
 
 
 
-![png](src/src/22.png)
+![png](src/22.png)
 
 
     
@@ -1314,11 +1314,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/23.png)
+![png](src/23.png)
 
 
 
-![png](src/src/24.png)
+![png](src/24.png)
 
 
     
@@ -1346,11 +1346,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/25.png)
+![png](src/25.png)
 
 
 
-![png](src/src/26.png)
+![png](src/26.png)
 
 
     
@@ -1374,11 +1374,11 @@ for crime in unstacked.columns:
     
 
 
-![png](src/src/27.png)
+![png](src/27.png)
 
 
 
-![png](src/src/28.png)
+![png](src/28.png)
 
 
     
@@ -1400,7 +1400,7 @@ SaveAsHTML(fig)
 ```
 
 
-![png](src/src/29.png)
+![png](src/29.png)
 
 
 
@@ -1466,11 +1466,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/30.png)
+![png](src/30.png)
 
 
 
-![png](src/src/31.png)
+![png](src/31.png)
 
 
     
@@ -1493,11 +1493,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/32.png)
+![png](src/32.png)
 
 
 
-![png](src/src/33.png)
+![png](src/33.png)
 
 
     
@@ -1521,11 +1521,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/34.png)
+![png](src/34.png)
 
 
 
-![png](src/src/35.png)
+![png](src/35.png)
 
 
     
@@ -1552,11 +1552,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/36.png)
+![png](src/36.png)
 
 
 
-![png](src/src/37.png)
+![png](src/37.png)
 
 
     
@@ -1584,11 +1584,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/38.png)
+![png](src/38.png)
 
 
 
-![png](src/src/39.png)
+![png](src/39.png)
 
 
     
@@ -1613,11 +1613,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/40.png)
+![png](src/40.png)
 
 
 
-![png](src/src/41.png)
+![png](src/41.png)
 
 
     
@@ -1643,11 +1643,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/42.png)
+![png](src/42.png)
 
 
 
-![png](src/src/43.png)
+![png](src/43.png)
 
 
     
@@ -1676,11 +1676,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/44.png)
+![png](src/44.png)
 
 
 
-![png](src/src/45.png)
+![png](src/45.png)
 
 
     
@@ -1700,11 +1700,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/46.png)
+![png](src/46.png)
 
 
 
-![png](src/src/47.png)
+![png](src/47.png)
 
 
     
@@ -1730,11 +1730,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/48.png)
+![png](src/48.png)
 
 
 
-![png](src/src/49.png)
+![png](src/49.png)
 
 
     
@@ -1759,11 +1759,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/50.png)
+![png](src/50.png)
 
 
 
-![png](src/src/51.png)
+![png](src/51.png)
 
 
     
@@ -1789,11 +1789,11 @@ for weapon in unstacked.columns:
     
 
 
-![png](src/src/52.png)
+![png](src/52.png)
 
 
 
-![png](src/src/53.png)
+![png](src/53.png)
 
 
     
