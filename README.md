@@ -1146,7 +1146,7 @@ for crime in unstacked.columns:
     Bow & Arrow/Crossbow/Blow Gun       12.0
     Boomerang                            8.0
     
-
+Interestingly, even boomerangs are used in domestic violence!
 
 ![png](src/11.png)
 
@@ -1177,7 +1177,7 @@ for crime in unstacked.columns:
     Syringe                             26.0
     Rope/Wire/Whip Etc.                 13.0
     
-
+Boomerangs are also used for harassment.
 
 ![png](src/13.png)
 
