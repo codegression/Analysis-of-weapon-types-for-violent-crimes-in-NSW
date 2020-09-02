@@ -18,6 +18,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt 
 import matplotlib as mpl
 import squarify
+import plotly.io as pio
 import plotly.express as px
 from IPython.display import display, Markdown
 import warnings
@@ -188,7 +189,21 @@ for i in range(len(overall)):
 overall.index = labels
 
 
-# In[45]:
+# In[18]:
+
+
+count_html_output = 1
+def SaveAsHTML(fig):
+    global count_html_output
+    #fig.show()
+    #pio.write_html(fig, file='src/' + str(count_html_output) + '.html', auto_open=False)
+    #print ('<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/' + str(count_html_output) + '.html" height="100%" width="100%"></iframe>')
+    fig.write_image("src/" + str(count_html_output) + ".png")
+    display(Markdown("![png](src/" + str(count_html_output) + ".png)"))
+    count_html_output = count_html_output + 1
+
+
+# In[19]:
 
 
 fig = px.treemap(overall.to_frame('Cases').reset_index(), 
@@ -198,12 +213,12 @@ fig = px.treemap(overall.to_frame('Cases').reset_index(),
                  color_continuous_scale='ice',
                  color='Cases'
                 )
-fig.show()
+SaveAsHTML(fig)
 
 
 # Knife and other stabbing weapons are mostly used in violent crimes. Interestingly, bows, arrows and boomerangs are also used.
 
-# In[19]:
+# In[20]:
 
 
 plt.figure(figsize=(10,15))
@@ -215,7 +230,7 @@ plt.show()
 
 # # Analysis of types of weapons for various crimes
 
-# In[20]:
+# In[21]:
 
 
 weaponoffence = data.sum(axis=1)
@@ -224,7 +239,7 @@ print(weaponoffence)
 
 # ### Overall
 
-# In[40]:
+# In[22]:
 
 
 fig = px.treemap(weaponoffence.to_frame('Cases').reset_index(), 
@@ -233,10 +248,10 @@ fig = px.treemap(weaponoffence.to_frame('Cases').reset_index(),
                  hover_data=['Cases'],                 
                  color='Cases'
                 )
-fig.show()
+SaveAsHTML(fig)
 
 
-# In[62]:
+# In[23]:
 
 
 unstacked = weaponoffence.unstack(level=1).fillna(0)
@@ -269,15 +284,14 @@ for crime in unstacked.columns:
                  color_continuous_scale='earth',
                  color='Cases'
                 )
-    fig1.show()
-
+    SaveAsHTML(fig1)
     
     fig2 = px.pie(df, 
                   values='Cases', 
                   names='Weapon'               
                  )
     fig2.update_traces(textinfo='value')
-    fig2.show()
+    SaveAsHTML(fig2)
     
     print()
     print()
@@ -289,7 +303,7 @@ for crime in unstacked.columns:
 
 # ### Overall
 
-# In[23]:
+# In[24]:
 
 
 fig = px.treemap(weaponoffence.to_frame('Cases').reset_index(), 
@@ -297,10 +311,10 @@ fig = px.treemap(weaponoffence.to_frame('Cases').reset_index(),
                  values='Cases',
                  color='Cases'
                 )
-fig.show()
+SaveAsHTML(fig)
 
 
-# In[59]:
+# In[25]:
 
 
 unstacked = weaponoffence.unstack(level=0).fillna(0)
@@ -334,8 +348,7 @@ for weapon in unstacked.columns:
                  color_continuous_scale='algae',
                  color='Cases'
                 )
-    fig1.show()
-
+    SaveAsHTML(fig1)
     
     fig2 = px.pie(df, 
                   values='Cases', 
@@ -343,7 +356,7 @@ for weapon in unstacked.columns:
                  color_discrete_sequence=px.colors.diverging.Portland
                  )
     fig2.update_traces(textinfo='value')
-    fig2.show()
+    SaveAsHTML(fig2)
     
     print()
     print()

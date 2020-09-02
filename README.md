@@ -892,8 +892,10 @@ count_html_output = 1
 def SaveAsHTML(fig):
     global count_html_output
     #fig.show()
-    pio.write_html(fig, file='src/' + str(count_html_output) + '.html', auto_open=False)
-    print ('<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/' + str(count_html_output) + '.html" height="100%" width="100%"></iframe>')
+    #pio.write_html(fig, file='src/' + str(count_html_output) + '.html', auto_open=False)
+    #print ('<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/' + str(count_html_output) + '.html" height="100%" width="100%"></iframe>')
+    fig.write_image("src/" + str(count_html_output) + ".png")
+    display(Markdown("![png](src/src/" + str(count_html_output) + ".png)"))
     count_html_output = count_html_output + 1
 ```
 
@@ -909,8 +911,9 @@ fig = px.treemap(overall.to_frame('Cases').reset_index(),
 SaveAsHTML(fig)
 ```
 
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/1.html" height="100%" width="100%"></iframe>
-    
+
+![png](src/src/1.png)
+
 
 Knife and other stabbing weapons are mostly used in violent crimes. Interestingly, bows, arrows and boomerangs are also used.
 
@@ -963,8 +966,9 @@ fig = px.treemap(weaponoffence.to_frame('Cases').reset_index(),
 SaveAsHTML(fig)
 ```
 
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/2.html" height="100%" width="100%"></iframe>
-    
+
+![png](src/src/2.png)
+
 
 
 ```python
@@ -1029,8 +1033,16 @@ for crime in unstacked.columns:
     Syringe                             4.0
     Brick/Rock/Stone/Missile            1.0
     Bow & Arrow/Crossbow/Blow Gun       1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/3.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/4.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/3.png)
+
+
+
+![png](src/src/4.png)
+
+
     
     
     
@@ -1051,8 +1063,16 @@ for crime in unstacked.columns:
     Rope/Wire/Whip Etc.                 3.0
     Firearms                            3.0
     Boomerang                           1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/5.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/6.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/5.png)
+
+
+
+![png](src/src/6.png)
+
+
     
     
     
@@ -1070,8 +1090,16 @@ for crime in unstacked.columns:
     Syringe                             1.0
     Club/Iron Bar/Pipe                  1.0
     Bow & Arrow/Crossbow/Blow Gun       1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/7.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/8.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/7.png)
+
+
+
+![png](src/src/8.png)
+
+
     
     
     
@@ -1085,8 +1113,16 @@ for crime in unstacked.columns:
     Firearms                           21.0
     Knife/Sword/Scissors/Screwdriver   10.0
     Club/Iron Bar/Pipe                  4.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/9.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/10.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/9.png)
+
+
+
+![png](src/src/10.png)
+
+
     
     
     
@@ -1109,8 +1145,16 @@ for crime in unstacked.columns:
     Oleoresin Capsicum Spray            12.0
     Bow & Arrow/Crossbow/Blow Gun       12.0
     Boomerang                            8.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/11.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/12.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/11.png)
+
+
+
+![png](src/src/12.png)
+
+
     
     
     
@@ -1132,8 +1176,16 @@ for crime in unstacked.columns:
     Bow & Arrow/Crossbow/Blow Gun       41.0
     Syringe                             26.0
     Rope/Wire/Whip Etc.                 13.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/13.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/14.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/13.png)
+
+
+
+![png](src/src/14.png)
+
+
     
     
     
@@ -1147,8 +1199,16 @@ for crime in unstacked.columns:
     Firearms                            3.0
     Knife/Sword/Scissors/Screwdriver    2.0
     Syringe                             1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/15.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/16.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/15.png)
+
+
+
+![png](src/src/16.png)
+
+
     
     
     
@@ -1168,8 +1228,16 @@ for crime in unstacked.columns:
     Brick/Rock/Stone/Missile            3.0
     Syringe                             2.0
     Rope/Wire/Whip Etc.                 1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/17.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/18.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/17.png)
+
+
+
+![png](src/src/18.png)
+
+
     
     
     
@@ -1181,8 +1249,16 @@ for crime in unstacked.columns:
                                       Cases
     Weapon                                 
     Knife/Sword/Scissors/Screwdriver    1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/19.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/20.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/19.png)
+
+
+
+![png](src/src/20.png)
+
+
     
     
     
@@ -1205,8 +1281,16 @@ for crime in unstacked.columns:
     Bow & Arrow/Crossbow/Blow Gun       28.0
     Oleoresin Capsicum Spray            27.0
     Boomerang                            4.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/21.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/22.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/21.png)
+
+
+
+![png](src/src/22.png)
+
+
     
     
     
@@ -1227,8 +1311,16 @@ for crime in unstacked.columns:
     Syringe                             2.0
     Rope/Wire/Whip Etc.                 2.0
     Bow & Arrow/Crossbow/Blow Gun       1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/23.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/24.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/23.png)
+
+
+
+![png](src/src/24.png)
+
+
     
     
     
@@ -1251,8 +1343,16 @@ for crime in unstacked.columns:
     Oleoresin Capsicum Spray             5.0
     Bow & Arrow/Crossbow/Blow Gun        1.0
     Boomerang                            1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/25.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/26.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/25.png)
+
+
+
+![png](src/src/26.png)
+
+
     
     
     
@@ -1271,8 +1371,16 @@ for crime in unstacked.columns:
     Club/Iron Bar/Pipe                  7.0
     Hammer/Spanner/Wrench               4.0
     Other Prohibited Weapon/Danger      3.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/27.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/28.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/27.png)
+
+
+
+![png](src/src/28.png)
+
+
     
     
     
@@ -1291,8 +1399,9 @@ fig = px.treemap(weaponoffence.to_frame('Cases').reset_index(),
 SaveAsHTML(fig)
 ```
 
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/29.html" height="100%" width="100%"></iframe>
-    
+
+![png](src/src/29.png)
+
 
 
 ```python
@@ -1354,8 +1463,16 @@ for weapon in unstacked.columns:
     Non-domestic violence related assault    4.0
     Robbery                                  1.0
     Assault Police                           1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/30.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/31.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/30.png)
+
+
+
+![png](src/src/31.png)
+
+
     
     
     
@@ -1373,8 +1490,16 @@ for weapon in unstacked.columns:
     Other offences against the person        1.0
     Attempted murder                         1.0
     Abduction and kidnapping                 1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/32.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/33.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/32.png)
+
+
+
+![png](src/src/33.png)
+
+
     
     
     
@@ -1393,8 +1518,16 @@ for weapon in unstacked.columns:
     Assault Police                          14.0
     Murder                                   3.0
     Abduction and kidnapping                 1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/34.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/35.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/34.png)
+
+
+
+![png](src/src/35.png)
+
+
     
     
     
@@ -1416,8 +1549,16 @@ for weapon in unstacked.columns:
     Sexual offences                           7.0
     Blackmail and extortion                   4.0
     Attempted murder                          1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/36.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/37.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/36.png)
+
+
+
+![png](src/src/37.png)
+
+
     
     
     
@@ -1440,8 +1581,16 @@ for weapon in unstacked.columns:
     Blackmail and extortion                  21.0
     Manslaughter                              3.0
     Assault Police                            3.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/38.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/39.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/38.png)
+
+
+
+![png](src/src/39.png)
+
+
     
     
     
@@ -1461,8 +1610,16 @@ for weapon in unstacked.columns:
     Sexual offences                          10.0
     Abduction and kidnapping                  6.0
     Murder                                    3.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/40.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/41.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/40.png)
+
+
+
+![png](src/src/41.png)
+
+
     
     
     
@@ -1483,8 +1640,16 @@ for weapon in unstacked.columns:
     Sexual offences                          4.0
     Attempted murder                         4.0
     Assault Police                           4.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/42.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/43.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/42.png)
+
+
+
+![png](src/src/43.png)
+
+
     
     
     
@@ -1508,8 +1673,16 @@ for weapon in unstacked.columns:
     Blackmail and extortion                  10.0
     Manslaughter                              2.0
     Murder accessory, conspiracy              1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/44.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/45.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/44.png)
+
+
+
+![png](src/src/45.png)
+
+
     
     
     
@@ -1524,8 +1697,16 @@ for weapon in unstacked.columns:
     Domestic violence related assault       12.0
     Robbery                                  5.0
     Assault Police                           4.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/46.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/47.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/46.png)
+
+
+
+![png](src/src/47.png)
+
+
     
     
     
@@ -1546,8 +1727,16 @@ for weapon in unstacked.columns:
     Assault Police                          10.0
     Sexual offences                          3.0
     Attempted murder                         2.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/48.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/49.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/48.png)
+
+
+
+![png](src/src/49.png)
+
+
     
     
     
@@ -1567,8 +1756,16 @@ for weapon in unstacked.columns:
     Assault Police                           3.0
     Other offences against the person        2.0
     Murder                                   1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/50.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/51.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/50.png)
+
+
+
+![png](src/src/51.png)
+
+
     
     
     
@@ -1589,8 +1786,16 @@ for weapon in unstacked.columns:
     Murder                                   2.0
     Manslaughter                             1.0
     Attempted murder                         1.0
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/52.html" height="100%" width="100%"></iframe>
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="src/53.html" height="100%" width="100%"></iframe>
+    
+
+
+![png](src/src/52.png)
+
+
+
+![png](src/src/53.png)
+
+
     
     
     
